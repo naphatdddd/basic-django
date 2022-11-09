@@ -1,0 +1,21 @@
+{% extends 'mywebsite/header.html' %} {% block content %}
+<br />
+<h1>Add Data</h1>
+<form action="{% url 'addnewsdata' %}" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" class="form-control" name="news_title" />
+  </div>
+  <div class="form-group">
+    <label for="">Discription</label>
+    <textarea type="text" class="form-control" name="news_detail" rows="5"></textarea>
+  </div>
+  <div class="form-group">
+    <input type="file" name="news_photo" accept="image/x-png,image/gif,image/jpeg" />
+    <img id="blah" src="#" alt="" class="img-thumbnail" />
+  </div>
+  <input type="submit" class="btn btn-success" value="SAVE" />
+</form>
+
+{% endblock %}

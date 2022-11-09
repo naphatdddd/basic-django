@@ -1,0 +1,31 @@
+{% extends 'mywebsite/header.html' %} {% block content %}
+<br />
+<h1>Result Data</h1>
+
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">TITLE</th>
+      <th scope="col">DETAIL</th>
+      <th scope="col">DATE</th>
+      <th scope="col">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in news %}
+    <tr>
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.news_title}}</td>
+      <td>{{data.news_detail}}</td>
+      <td>{{data.news_date}}</td>
+      <td>
+        <button type="button" class="btn btn-primary">EDIT</button>
+        <button type="button" class="btn btn-danger">DEL</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
